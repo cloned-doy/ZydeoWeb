@@ -1,19 +1,32 @@
-# ---- Build stage ----
+# ---- Front-end assets: builds wwwroot/prod-js and wwwroot/prod-style via gulp ----
+FROM node:22 AS assets
+WORKDIR /web
+COPY ZDO.CHSite/package.json ZDO.CHSite/package-lock.json ./
+RUN npm ci --no-audit --no-fund
+COPY ZDO.CHSite/gulpfile.js ./
+COPY ZDO.CHSite/wwwroot ./wwwroot
+RUN npx gulp
+
+# ---- .NET build stage ----
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
-# Copy only the four projects ZDO.CHSite actually needs, restore first for layer caching
+# Restore first for layer caching
 COPY Countries/Countries.csproj Countries/
 COPY ZD.Common/ZD.Common.csproj ZD.Common/
 COPY ZD.LangUtils/ZD.LangUtils.csproj ZD.LangUtils/
 COPY ZDO.CHSite/ZDO.CHSite.csproj ZDO.CHSite/
 RUN dotnet restore ZDO.CHSite/ZDO.CHSite.csproj
 
-# Now copy full source and publish
 COPY Countries/ Countries/
 COPY ZD.Common/ ZD.Common/
 COPY ZD.LangUtils/ ZD.LangUtils/
 COPY ZDO.CHSite/ ZDO.CHSite/
+
+# Bring in the gulp-built production assets (not committed to git)
+COPY --from=assets /web/wwwroot/prod-js ZDO.CHSite/wwwroot/prod-js
+COPY --from=assets /web/wwwroot/prod-style ZDO.CHSite/wwwroot/prod-style
+
 RUN dotnet publish ZDO.CHSite/ZDO.CHSite.csproj -c Release -o /app/publish --no-restore
 
 # ---- Runtime stage ----
@@ -21,20 +34,25 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/publish .
 
-# Startup.cs hard-requires these exact absolute paths to exist in Production.
-# Kept empty: real settings come from environment variables (set in Dokploy),
-# which are read *before* these files and therefore take precedence.
+# Placeholder config files the app/tools require at hardcoded absolute paths.
+# Real settings come from environment variables set in Dokploy.
 RUN mkdir -p /etc/zdo/zdo-chd-live /etc/zdo/zdo-hdd-live && \
     echo '{}' > /etc/zdo-chd-live-appsettings.json && \
     echo '{}' > /etc/zdo-hdd-live-appsettings.json && \
     echo '{}' > /etc/zdo/zdo-chd-live/secrets.json && \
-    echo '{}' > /etc/zdo/zdo-hdd-live/secrets.json
+    echo '{}' > /etc/zdo/zdo-hdd-live/secrets.json && \
+    echo '{}' > /etc/zdo/zdo-chd-live/appsettings.json && \
+    echo '{}' > /etc/zdo/zdo-hdd-live/appsettings.json
 
-# Mount point for data that must persist / be updated without a rebuild:
-# unihanzi.bin, IpToCountry.csv, session file, logs, privatePagesFolder, etc.
 RUN mkdir -p /data
 VOLUME ["/data"]
 
+ENV ASPNETCORE_ENVIRONMENT=Production
+ENV MUTATION=HDD
+ENV ZDO_PORT=8080
+EXPOSE 8080
+
+ENTRYPOINT ["dotnet", "ZDO.CHSite.dll"]
 ENV ASPNETCORE_ENVIRONMENT=Production
 ENV MUTATION=HDD
 ENV ZDO_PORT=8080
