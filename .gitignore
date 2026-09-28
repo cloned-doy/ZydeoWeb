@@ -36,3 +36,4 @@ project.lock.json
 
 
 ZDO.ConcAlign/*.bin
+.env.local

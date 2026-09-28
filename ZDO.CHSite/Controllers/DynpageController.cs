@@ -47,7 +47,7 @@ namespace ZDO.CHSite.Controllers
         /// That way, functionality is limited to serving static pages.
         /// </remarks>
         public DynpageController(PageProvider pageProvider, IConfiguration config, ILogger<DynpageController> logger,
-            Auth auth, SqlDict dict, CountryResolver cres, QueryLogger qlog, Sphinx sphinx, LangRepo langRepo)
+            Auth auth, SqlDict dict, CountryResolver cres, QueryLogger qlog, LangRepo langRepo, Sphinx sphinx = null)
         {
             this.cres = cres;
             this.pageProvider = pageProvider;
@@ -311,7 +311,7 @@ namespace ZDO.CHSite.Controllers
             return true;
         }
 
-        private PageResult doSearchInner(string rel, string lang, string searchScript, string searchTones, 
+        private PageResult doSearchInner(string rel, string lang, string searchScript, string searchTones,
             bool isMobile, out string query)
         {
             query = "";
