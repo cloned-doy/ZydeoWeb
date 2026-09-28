@@ -34,6 +34,11 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/publish .
 
+# Put the gulp-built production assets straight into the served wwwroot,
+# so they don't depend on the .csproj publish glob picking them up.
+COPY --from=assets /web/wwwroot/prod-js /app/wwwroot/prod-js
+COPY --from=assets /web/wwwroot/prod-style /app/wwwroot/prod-style
+
 # Placeholder config files the app/tools require at hardcoded absolute paths.
 # Real settings come from environment variables set in Dokploy.
 RUN mkdir -p /etc/zdo/zdo-chd-live /etc/zdo/zdo-hdd-live && \
@@ -47,12 +52,6 @@ RUN mkdir -p /etc/zdo/zdo-chd-live /etc/zdo/zdo-hdd-live && \
 RUN mkdir -p /data
 VOLUME ["/data"]
 
-ENV ASPNETCORE_ENVIRONMENT=Production
-ENV MUTATION=HDD
-ENV ZDO_PORT=8080
-EXPOSE 8080
-
-ENTRYPOINT ["dotnet", "ZDO.CHSite.dll"]
 ENV ASPNETCORE_ENVIRONMENT=Production
 ENV MUTATION=HDD
 ENV ZDO_PORT=8080
