@@ -1,8 +1,8 @@
 # ---- Front-end assets: builds wwwroot/prod-js and wwwroot/prod-style via gulp ----
 FROM node:22 AS assets
 WORKDIR /web
-COPY ZDO.CHSite/package.json ZDO.CHSite/package-lock.json ./
-RUN npm ci --no-audit --no-fund
+COPY ZDO.CHSite/package.json ZDO.CHSite/yarn.lock ./
+RUN yarn install --frozen-lockfile --non-interactive
 COPY ZDO.CHSite/gulpfile.js ./
 COPY ZDO.CHSite/wwwroot ./wwwroot
 RUN npx gulp
