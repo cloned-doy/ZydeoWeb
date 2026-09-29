@@ -39,6 +39,7 @@ namespace ZD.Tool
             Console.WriteLine("  Fakes a CEDICT-style dictionary from MOEDICT headwords.");
             Console.WriteLine("  Input name fixed: moedict-heas-simp.txt and moedict-heads-trad.txt");
             Console.WriteLine("--ch-examine");
+        Console.WriteLine("--cidict-diag");
             Console.WriteLine("  Parses CHDICT file, logs anomalies and stats.");
             Console.WriteLine("  Input name fixed: chdict.u8");
             Console.WriteLine();
@@ -55,6 +56,7 @@ namespace ZD.Tool
             if (args[0] == "--moedict-heads") return args[0];
             if (args[0] == "--moedict-fake") return args[0];
             if (args[0] == "--ch-examine") return args[0];
+        if (args[0] == "--cidict-diag") return args[0];
             return null;
         }
 
@@ -71,6 +73,7 @@ namespace ZD.Tool
                 if (opt as string == "--moedict-heads") return new WrkMoeEntries();
                 if (opt as string == "--moedict-fake") return new WrkMoeFake();
                 if (opt as string == "--ch-examine") return new WrkChExamine();
+        if (opt as string == "--cidict-diag") return new WrkCidictDiag();
             }
             throw new Exception(opt.GetType().ToString() + " is not recognized as an options type.");
         }
