@@ -77,7 +77,7 @@ namespace ZD.Tool
             public char[] TradVars;
             public string[] Pinlu;
             public string[] Pinyin;
-            public string Mandarin;
+            public string[] Mandarin;
             public string[] XHC;
             public HanziStrokes HanziInfo;
             public int FilePos;
@@ -153,7 +153,7 @@ namespace ZD.Tool
         private void doMandarin(char c, string str)
         {
             CharInfo ci = getOrMake(c);
-            ci.Mandarin = str;
+            ci.Mandarin = str.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
         }
 
         private void doXHC1983(char c, string str)
@@ -263,7 +263,10 @@ namespace ZD.Tool
             // Pinyin reading: use Mandarin only if no other source available
             // Otherwise, combine ranking of sources
             if (ci.Pinlu == null && ci.Pinyin == null && ci.XHC == null)
-                pinyin.Add(ci.Mandarin);
+            {
+                if (ci.Mandarin != null)
+                    pinyin.AddRange(ci.Mandarin);
+            }
             else
             {
                 int max = 0;
@@ -311,10 +314,37 @@ namespace ZD.Tool
             }
 
             // Convert to typed Pinyin syllables
-            PinyinSyllable[] sylls = new PinyinSyllable[pinyin.Count];
-            for (int i = 0; i != pinyin.Count; ++i) sylls[i] = PinyinSyllable.FromDisplayString(pinyin[i]);
+            List<PinyinSyllable> validSylls = new List<PinyinSyllable>();
+            for (int i = 0; i != pinyin.Count; ++i)
+            {
+                PinyinSyllable syll = PinyinSyllable.FromDisplayString(pinyin[i]);
+                if (syll == null)
+                {
+                    continue;
+                }
+                validSylls.Add(syll);
+            }
 
-            // Done.
+            if (validSylls.Count == 0)
+            {
+                if (ci.Mandarin != null)
+                {
+                    foreach (string py in ci.Mandarin)
+                    {
+                        PinyinSyllable syll = PinyinSyllable.FromDisplayString(py);
+                        if (syll != null)
+                            validSylls.Add(syll);
+                    }
+                }
+            }
+
+            PinyinSyllable[] sylls = validSylls.ToArray();
+
+            if (sylls.Length == 0)
+            {
+                return null;
+            }
+
             return new UniHanziInfo(canBeSimp, tradVariants.ToArray(), sylls);
         }
 
@@ -342,7 +372,8 @@ namespace ZD.Tool
                 if ((flags & 1) == 1)
                 {
                     UniHanziInfo uhi = getInfo(x.Key, x.Value);
-                    uhi.Serialize(bw);
+                    if (uhi != null)
+                        uhi.Serialize(bw);
                 }
                 if (x.Value.HanziInfo != null) x.Value.HanziInfo.Serialize(bw);
             }
