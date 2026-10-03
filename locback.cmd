@@ -9,3 +9,4 @@ copy _locback\private\*.html	_private_content\
 echo Fixing array name in JS
 fart ZDO.CHSite\wwwroot\dev-js\strings.de.js uiStringsEn uiStringsDe
 fart ZDO.CHSite\wwwroot\dev-js\strings.hu.js uiStringsEn uiStringsHu
+fart ZDO.CHSite\wwwroot\dev-js\strings.id.js uiStringsEn uiStringsId

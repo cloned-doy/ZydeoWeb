@@ -67,6 +67,7 @@ namespace ZDO.CHSite
         {
             this.mut = mut;
             initForLang("en");
+            initForLang("id");
             initForLang("de");
             initForLang("hu");
         }

@@ -288,6 +288,7 @@ namespace ZDO.CHSite.Logic
         private static char getLangLetter(string uiLang)
         {
             if (uiLang == "en") return 'E';
+            else if (uiLang == "id") return 'I';
             else if (uiLang == "de") return 'D';
             else if (uiLang == "hu") return 'H';
             else if (uiLang == "jian") return 'J';
@@ -307,7 +308,7 @@ namespace ZDO.CHSite.Logic
             }
         }
 
-        public void LogCorpus(string countryCode, bool isMobile, string uiLang, int resCount, 
+        public void LogCorpus(string countryCode, bool isMobile, string uiLang, int resCount,
             int msecLookup, int msecTotal, bool isZho, bool isLoadMore, string query)
         {
             CorpusItem itm = new CorpusItem(countryCode, isMobile, getLangLetter(uiLang),

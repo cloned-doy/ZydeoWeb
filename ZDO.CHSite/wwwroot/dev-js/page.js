@@ -41,7 +41,7 @@ var zdPage = (function () {
 
   // Incremented for subsequent alerts, so we can correctly animate new one shown before old one has expired.
   var alertId = 0;
- 
+
   // Parse full path, language, and relative path from URL
   function parseLocation() {
     location = window.history.location || window.location;
@@ -53,10 +53,10 @@ var zdPage = (function () {
       rel = path == "/en" ? "" : path.substring(4);
       uiStrings = uiStringsEn;
     }
-    else if (startsWith(path, "/hu/") || path == "/hu") {
-      lang = "hu";
-      rel = path == "/hu" ? "" : path.substring(4);
-      uiStrings = uiStringsHu;
+    else if (startsWith(path, "/id/") || path == "/id") {
+      lang = "id";
+      rel = path == "/id" ? "" : path.substring(4);
+      uiStrings = uiStringsId;
     }
     else if (startsWith(path, "/de/") || path == "/de") {
       lang = "de";
@@ -395,11 +395,14 @@ var zdPage = (function () {
     // Language selector
     $(".langSelDe").attr("href", "/de/" + rel);
     $(".langSelHu").attr("href", "/hu/" + rel);
+    $(".langSelId").attr("href", "/id/" + rel);
     $(".langSelEn").attr("href", "/en/" + rel);
     $(".langSel").removeClass("on");
     if (lang == "en") $(".langSelEn").addClass("on");
+    else if (lang == "id") $(".langSelId").addClass("on");
     else if (lang == "hu") $(".langSelHu").addClass("on");
     else if (lang == "de") $(".langSelDe").addClass("on");
+    else if (lang == "id") $(".langSelId").addClass("on");
   }
 
   // Fix title in hamburger mode if there is no submenu
@@ -630,7 +633,7 @@ var zdPage = (function () {
     isTouch: function () {
       // http://stackoverflow.com/questions/4817029/whats-the-best-way-to-detect-a-touch-screen-device-using-javascript
       var res = false;
-      // works on most browsers 
+      // works on most browsers
       try { res |= 'ontouchstart' in window; } catch (e) { }
       // works on IE10/11 and Surface
       try { res |= navigator.maxTouchPoints; } catch (e) { }

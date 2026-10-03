@@ -9,7 +9,7 @@
     "message3": "zydeodict-[at]-gmail-[dot]-com"
   },
   "search-manual": {
-    "hint-hdd": "Hanzi, Pinyin oder deutsches Wort",
+    "hint-hdd": "Hanzi, Pinyin atau kata Indonesia",
     "hint-chd": "Hanzi, Pinyin oder ungarisches Wort",
     "tooltip-btn-brush": "Handschrifterkennung",
     "tooltip-btn-settings": "Suchoptionen",

@@ -1,0 +1,90 @@
+﻿{
+  "header": {
+    "topSearch": "Cari",
+    "topEdit": "Ubah",
+    "topRead": "Baca",
+    "topFAQ": "FAQ",
+    "topDownload": "Unduh",
+    "subEditNew": "Entri baru",
+    "subEditHistory": "Riwayat",
+    "subEditExisting": "Ubah entri",
+    "subReadFAQ": "FAQ",
+    "subReadDetails": "Detail",
+    "subReadDetailsCHD": "Etc",
+    "subReadAbout": "Tentang",
+    "subReadCorpus": "Corpus",
+    "subReadSearchTipsHDD": "Tips pencarian",
+    "subReadSearchTipsCHD": "Tips pencarian",
+    "subReadVersionHistory": "Riwayat versi",
+    "subReadArticles": "Artikel",
+    "subReadEtc": "Small print",
+    "subDownloadHDD": "Unduh Kamus",
+    "subDownloadCHD": "Unduh CHDICT",
+    "subUserList": "Pengguna",
+    "subMyProfile": "Profilku"
+  },
+  "misc": {
+    "searchResultTitleHDD": "{0} - German translation - HanDeDict @ Zydeo Chinese-German Dictionary",
+    "searchResultTitleTrgHDD": "{0} - Chinese translation - HanDeDict @ Zydeo Chinese-German Dictionary",
+    "searchResultTitleCHD": "{0} - Hungarian translation - CHDICT Chinese ⇔ Hungarian Dictionary",
+    "searchResultTitleTrgCHD": "{0} - Chinese translation - CHDICT Chinese ⇔ Hungarian Dictionary",
+    "corpusResultTitleCHD": "{0} - Sentence translations - CHDICT Chinese ⇔ Hungarian Corpus",
+    "cookieNotice": "This website relies on cookies for some of its functionality. By using the site, you agree to its use of cookies.",
+    "cookieOK": "OK",
+    "cookieLearnMore": "Learn more",
+    "imprint": "Imprint"
+  },
+  "search": {
+    "searchModeDict": "Kamus",
+    "searchModeCorp": "Corpus",
+    "corpusLoadMore": "Muat lainnya",
+    "corpusResultCount": "{0} results",
+    "annotationNotice": "The search expression is not a word in the dictionary; showing annotations instead.",
+    "annotationAddNow": "I'll add the word now"
+  },
+  "emails": {
+    "senderNameHDD": "HanDeDict @ Zydeo website",
+    "senderNameCHD": "CHDICT website",
+    "regConfirm": "Complete your registration",
+    "mailChangeConfirm": "Confirm new email",
+    "passreset": "Reset your password"
+  },
+  "history": {
+    "lblPage": "Page",
+    "changeNewEntry": "New entry",
+    "changeEdited": "Edited",
+    "changeCommented": "Commented",
+    "changeBulkImport": "Bulk import",
+    "changeApproved": "Approved",
+    "changeFlagged": "Flagged",
+    "changeStatusNeutral": "Unflagged",
+    "bulkLink": "Link",
+    "bulkNewWords": "{0} new words",
+    "bulkChangedWords": "{0} words changed"
+  },
+  "userList": {
+    "registered": "Registered:",
+    "location": "Location:",
+    "about": "About:"
+  },
+  "newEntry": {
+    "errSpacePunct": "The headword must not contain spaces or punctuation",
+    "errNotHanzi": "Not a Hanzi, capital letter or digit:",
+    "errUnsupported": "Unsupported character:",
+    "errNotSimp": "Not simplified Hanzi:"
+  },
+  "editEntry": {
+    "badDataOnSave": "Your change cannot be saved: the entry is invalid. (Is the headword correct?)",
+    "duplicateOnSave": "Your change cannot be saved: an entry with this headword already exists in the dictionary.",
+    "hwProblemNotSimplified": "{0} does not appear to be a simplified character.",
+    "hwProblemNotTraditional": "{0} does not appear to be a traditional character.",
+    "hwProblemSimpTradCounts": "Different number of simplified and traditional characters.",
+    "hwProblemNotTradForSimp": "{0} is not a known traditional variant of {1}.",
+    "hwProblemWrongPinyin": "{0} is not a known reading of {1}.",
+    "hwProblemInvalidPinyin": "Incorrect or invalid Pinyin syllables.",
+    "hwProblemExtraSpacesPinyin": "Extra spaces in Pinyin."
+  },
+  "displayEntry": {
+    "classifier": "Classifier"
+  }
+}

@@ -37,7 +37,7 @@ namespace ZDO.CHSite.Controllers
         /// <summary>
         /// Ctor: infuse dependencies.
         /// </summary>
-        public IndexController(PageProvider pageProvider, IConfiguration config, 
+        public IndexController(PageProvider pageProvider, IConfiguration config,
             ILoggerFactory loggerFactory, Auth auth, SqlDict dict)
         {
             mut = config["MUTATION"] == "HDD" ? Mutation.HDD : Mutation.CHD;
@@ -50,13 +50,13 @@ namespace ZDO.CHSite.Controllers
 
         private static void getLangRel(string str, out string lang, out string rel)
         {
-            if (str == "en" || str == "de" || str == "hu")
+            if (str == "en" || str == "de" || str == "hu" || str == "id")
             {
                 lang = str;
                 rel = "";
                 return;
             }
-            if (str.StartsWith("en/") || str.StartsWith("de/") || str.StartsWith("hu/"))
+            if (str.StartsWith("en/") || str.StartsWith("de/") || str.StartsWith("hu/") || str.StartsWith("id/"))
             {
                 lang = str.Substring(0, 2);
                 rel = str.Substring(3);
@@ -77,7 +77,7 @@ namespace ZDO.CHSite.Controllers
             if (lang == null)
             {
                 // TO-DO: Check language cookie here
-                string redirTo = mut == Mutation.CHD ? "hu" : "de";
+                string redirTo = mut == Mutation.CHD ? "hu" : "id";
                 return RedirectPermanent("/" + redirTo);
             }
             // Infuse requested page right away
@@ -89,4 +89,3 @@ namespace ZDO.CHSite.Controllers
         }
     }
 }
-

@@ -1,43 +1,43 @@
-﻿var uiStringsEn = {
+﻿var uiStringsId = {
   "empty-str": "",
   "oops": {
-    "title-hdd": "Error - HanDeDict @ Zydeo Chinese-German Dictionary",
-    "title-chd": "Error - CHDICT Chinese-Hungarian Dictionary",
-    "caption": "Something went wrong",
+    "title-hdd": "Galat - HanDeDict @ Kamus Mandarin-Indonesia",
+    "title-chd": "Galat - Kamus Mandarin-Indonesia",
+    "caption": "Ada sesuatu yang salah...",
     "message1": "This can be the Internet's fault, or simply a bug in the dictionary. Please try reloading the page in a few seconds.",
     "message2": "If the problem persists, please drop me a note:",
     "message3": "zydeodict-[at]-gmail-[dot]-com"
   },
   "search-manual": {
-    "hint-hdd": "Hanzi, Pinyin or Indonesian word",
+    "hint-hdd": "Hanzi, Pinyin atau kata Indonesia",
     "hint-chd": "Hanzi, Pinyin or Hungarian word",
     "corpushint-chd": "Chinese or Hungarian expression",
-    "tooltip-btn-brush": "Handwriting recognition",
-    "tooltip-btn-settings": "Search settings",
-    "tooltip-btn-search": "Search (Enter)",
-    "corpus-load-fail-caption": "Something went wrong",
+    "tooltip-btn-brush": "Pengenalan tulisan",
+    "tooltip-btn-settings": "Pengaturan pencarian",
+    "tooltip-btn-search": "Cari (Enter)",
+    "corpus-load-fail-caption": "Ada kesalahan",
     "corpus-load-fail-message": "Failed to load more corpus hits."
   },
   "soa": {
-    "no-animation-for-char": "Sorry; we don't have an animation for this character.",
+    "no-animation-for-char": "Maaf, tidak tersedia animasi untuk karakter ini.",
     "query-failed": "Couldn't retrieve stroke order animation. Please try again in a few seconds.",
     "attribution": "Source:",
-    "title": "Stroke order"
+    "title": "Urutan goresan"
   },
   "handwriting": {
-    "title": "Handwriting",
-    "loading": "Loading...",
-    "clear": "Clear",
+    "title": "Goresan",
+    "loading": "Memuat...",
+    "clear": "Hapus",
     "undo": "Undo"
   },
   "options": {
-    "title": "Search settings",
+    "title": "Pengaturan pencarian",
     "script": "Script",
-    "simplified": "Simplified",
-    "traditional": "Traditional",
-    "bothscripts": "Both",
-    "tonecolors": "Tone colors",
-    "nocolors": "None",
+    "simplified": "Sederhana",
+    "traditional": "Tradisional",
+    "bothscripts": "Ganda",
+    "tonecolors": "Warna nada",
+    "nocolors": "Nihil",
     "pleco": "Pleco",
     "dummitt": "Dummitt"
   },
