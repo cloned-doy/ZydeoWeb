@@ -1,200 +1,240 @@
 ﻿<div id="x-mutation">hdd</div>
 <div id="x-lang">id</div>
 <div id="x-rel">/read/details/format-and-guidelines</div>
-<div id="x-description">The dictionary's file format, structure, editorial decisions, guidelines and conventions.</div>
-<div id="x-keywords">format, guidelines, conventions, CC-CEDICT, HanDeDict, Zydeo, Chinese, German, dictionary, free, open-source</div>
-<div id="x-title">Format and panduan - CIDICT @ Kamus Mandarin-Indonesia</div>
+<div id="x-description">Format berkas, struktur, keputusan redaksional, pedoman, dan konvensi kamus.</div>
+<div id="x-keywords">format, pedoman, konvensi, CC-CEDICT, Mandarin, Indonesia, kamus, gratis, sumber terbuka</div>
+<div id="x-title">Format dan pedoman - CIDICT @ Kamus Mandarin-Indonesia</div>
 
 <div class="content">
-  <h2>Format and guidelines</h2>
-  <p>
-    This website provides interactive functions to search, browse and edit HanDeDict. The dictionary itself is a
-    large text file that contains entries in the CC-CEDICT format, plus entry-level metainformation including a
-    unique ID and the entry’s full change history. Technically, all of this content is stored in a database, but
-    the website automatically updates the authoritative text file on a nightly schedule.
-  </p>
-  <p>
-    When you search or edit HanDeDict through the website, you are never directly in touch with the text-based format.
-    Many of the dictionary’s design decisions, however, are a direct consequence of the format’s constraints.
-    This page covers (1) the CC-CEDICT format at the core of the dictionary; (2) the extensions that accommodate entry
-    history; and (3) the editorial guidelines and conventions layered on top of the format itself.
-  </p>
-  <h3>A CC-CEDICT entry</h3>
-  <p>
-    With the exception of comments, which are marked with a <span class="inline-code">#</span> sign,
-    every non-empty line in the file represents a single dictionary entry. These lines have the following internal structure:
-  </p>
-  <div class="pre-wrap">
-    <pre><span style="color: #d43737;">檢索</span> <span style="color: #4343ce;">检索</span> <span style="color: #16a616;">[jian3 suo3]</span> /Recherche, Suche (S)/recherchieren, suchen (V)/</pre>
-  </div>
-  <ul>
-    <li>
-      This is a line from a plain text file; the colors are only added here for extra clarity.
-    </li>
-    <li>
-      The line begins with the headword, which in turn is made up of the <span style="color: #d43737;">traditional variant</span>,
-      <span style="color: #4343ce;">simplified variant</span> and <span style="color: #16a616;">Pinyin in square brackets</span>.
-      The three parts are separated by spaces.
-    </li>
-    <li>
-      Pinyin syllables indicate tone with a digit between 1 and 4, or 5 for the neutral tone. All Pinyin syllables are
-      separated by spaces.
-    </li>
-    <li>
-      The rest of the line lists senses, separated and surrounded by slashes.
-    </li>
-    <li>
-      As a logical constraint, every headword must contain the same number of traditional characters, simplified characters,
-      and Pinyin syllables.
-    </li>
-    <li>
-      Retroflex 儿 is represented by the separate Pinyin syllable <span class="inline-code">r5</span> - i.e.,
-      it is not appended to the previous syllable.
-    </li>
-  </ul>
-  <p>The same entry, when it appears as a search result, is rendered like this:</p>
-  <div class="entry toneColorsPleco" style="font-size: 0.7rem;">
-    <span class="hw-simp" lang="zh-CN"><span class="tone3 hanim">检</span><span class="tone3 hanim">索</span></span><span class="hw-sep faint">•</span><span class="hw-trad" lang="zh-TW"><span class="tone3 hanim">檢</span><span class="tone3 faint hanim">索</span></span><span class="hw-pinyin">jiǎn suǒ</span><div class="senses"><span class="sense"><span class="sense-nobr"><span class="sense-ix">1</span> Recherche,</span> Suche<span class="sense-meta"> (S)</span></span><span class="sense"><span class="sense-nobr"><span class="sense-ix">2</span> recherchieren,</span> suchen<span class="sense-meta"> (V)</span></span></div>
-  </div>
-  <p>&nbsp;</p>
-  <h3>Extended format</h3>
-  <p>
-    In addition to uncommented lines holding the current version of entries, HanDeDict’s data file contains additional
-    information in commented lines. In its initial state the entry above looks like this:
-  </p>
-  <div class="pre-wrap">
-    <pre># ID-a54wi5I
+    <h2>Format dan pedoman</h2>
+    <p>
+        Situs web ini menyediakan fungsi interaktif untuk mencari, menelusuri, dan menyunting HanDeDict. Kamus itu
+        sendiri merupakan berkas teks besar yang memuat entri dalam format CC-CEDICT, ditambah informasi meta tingkat
+        entri termasuk ID unik dan riwayat perubahan lengkap entri tersebut. Secara teknis, seluruh konten ini disimpan
+        dalam basis data, namun situs web memperbarui berkas teks utama secara otomatis setiap malam.
+    </p>
+    <p>
+        Saat Anda mencari atau menyunting HanDeDict melalui situs web, Anda tidak berinteraksi secara langsung dengan
+        format berbasis teks tersebut. Akan tetapi, banyak keputusan desain kamus yang merupakan konsekuensi langsung
+        dari batasan format itu sendiri. Halaman ini membahas (1) format CC-CEDICT yang menjadi inti kamus; (2) ekstensi
+        yang mengakomodasi riwayat entri; serta (3) pedoman dan konvensi redaksional yang diterapkan di atas format
+        tersebut.
+    </p>
+    <h3>Entri CC-CEDICT</h3>
+    <p>
+        Kecuali untuk komentar yang ditandai dengan simbol <span class="inline-code">#</span>, setiap baris yang tidak
+        kosong dalam berkas tersebut mewakili satu entri kamus. Baris-baris ini memiliki struktur internal sebagai
+        berikut:
+    </p>
+    <div class="pre-wrap">
+        <pre><span style="color: #d43737;">檢索</span> <span style="color: #4343ce;">检索</span> <span style="color: #16a616;">[jian3 suo3]</span> /Recherche, Suche (S)/recherchieren, suchen (V)/</pre>
+    </div>
+    <ul>
+        <li>
+            Ini adalah baris dari berkas teks biasa; warna-warna di sini hanya ditambahkan untuk memperjelas tampilan.
+        </li>
+        <li>
+            Baris tersebut diawali dengan kata entri, yang terdiri dari
+            <span style="color: #d43737">varian tradisional</span>,
+            <span style="color: #4343ce">varian yang disederhanakan</span>, dan
+            <span style="color: #16a616">Pinyin dalam kurung siku</span>. Ketiga bagian tersebut dipisahkan oleh spasi.
+        </li>
+        <li>
+            Suku kata Pinyin menunjukkan nada menggunakan angka antara 1 hingga 4, atau angka 5 untuk nada netral. Semua
+            suku kata Pinyin dipisahkan oleh spasi.
+        </li>
+        <li>
+            Bagian selanjutnya dari baris tersebut memuat daftar makna, yang dipisahkan dan diapit oleh tanda garis
+            miring (slash).
+        </li>
+        <li>
+            Sebagai ketentuan logis, setiap kata entri harus memiliki jumlah karakter tradisional, karakter yang
+            disederhanakan, dan suku kata Pinyin yang sama.
+        </li>
+        <li>
+            Bunyi retrofleks 儿 direpresentasikan oleh suku kata Pinyin terpisah
+            <span class="inline-code">r5</span>—artinya, bunyi tersebut tidak digabungkan dengan suku kata sebelumnya.
+        </li>
+    </ul>
+
+    <p>Entri yang sama, saat muncul sebagai hasil pencarian, ditampilkan seperti ini:</p>
+    <div class="entry toneColorsPleco" style="font-size: 0.7rem">
+        <span class="hw-simp" lang="zh-CN"><span class="tone3 hanim">检</span><span class="tone3 hanim">索</span></span
+        ><span class="hw-sep faint">•</span
+        ><span class="hw-trad" lang="zh-TW"
+            ><span class="tone3 hanim">檢</span><span class="tone3 faint hanim">索</span></span
+        ><span class="hw-pinyin">jiǎn suǒ</span>
+        <div class="senses">
+            <span class="sense"
+                ><span class="sense-nobr"><span class="sense-ix">1</span> Recherche,</span> Suche<span
+                    class="sense-meta"
+                >
+                    (S)</span
+                ></span
+            ><span class="sense"
+                ><span class="sense-nobr"><span class="sense-ix">2</span> recherchieren,</span> suchen<span
+                    class="sense-meta"
+                >
+                    (V)</span
+                ></span
+            >
+        </div>
+    </div>
+    <p>&nbsp;</p>
+    <h3>Format diperluas</h3>
+    <p>
+        Selain baris tanpa tanda komentar yang memuat versi entri saat ini, berkas data HanDeDict juga memuat informasi
+        tambahan dalam baris-baris yang ditandai sebagai komentar. Dalam kondisi awalnya, entri di atas tampak seperti
+        ini:
+    </p>
+    <div class="pre-wrap">
+        <pre>
+# ID-a54wi5I
 # Ver 2011-05-28T01:27:49Z HanDeDict Stat-New 001>Originalversion HanDeDict-Datei
 # 檢索 检索 [jian3 suo3] /Recherche, Suche (u.E.) (S)/recherchieren, suchen (u.E.) (V)/
 # Ver 2016-10-23T15:32:07Z zydeo-robot Stat-New 002>Datenreinigung
-檢索 检索 [jian3 suo3] /Recherche, Suche (S)/recherchieren, suchen (V)/</pre>
-  </div>
-  <p>
-    Extended entries are separated by an empty line in the file; each section starts with a commented line stating
-    the entry’s random unique ID. Every change in the entry’s history is represented by one or two lines.
-  </p>
-  <ul>
+檢索 检索 [jian3 suo3] /Recherche, Suche (S)/recherchieren, suchen (V)/</pre
+        >
+    </div>
+    <p>
+        Entri yang diperluas dipisahkan oleh baris kosong di dalam berkas; setiap bagian dimulai dengan baris komentar
+        yang mencantumkan ID unik acak milik entri tersebut. Setiap perubahan dalam riwayat entri direpresentasikan oleh
+        satu atau dua baris.
+    </p>
+    <ul>
+        <li>
+            Baris pertama, yang selalu ada, dimulai dengan <span class="inline-code">Ver</span> dan mencantumkan stempel
+            waktu versi, pengguna yang mengubah entri, status entri setelah perubahan, serta komentar setelah tanda
+            <span class="inline-code">&gt;</span>.
+        </li>
+        <li>
+            Jika perubahan tersebut mengubah kata utama (*headword*) atau salah satu terjemahan, baris kedua akan
+            menyusul dengan memuat konten entri setelah perubahan tersebut.
+        </li>
+    </ul>
     <li>
-      The first line, which is always present, starts with <span class="inline-code">Ver</span> and states the version’s
-      timestamp, the user that changed the entry, the entry’s status after the change, and a comment after the
-      <span class="inline-code">&gt;</span> mark.
+        Status entri bisa berupa Baru (<span class="inline-code">Stat-New</span>), Disetujui (<span class="inline-code"
+            >Stat-Verif</span
+        >), atau Ditandai (<span class="inline-code">Stat-Flagged</span>).
     </li>
     <li>
-      If the change altered either the headword or any of the translations, a second line follows with the entry’s
-      content after the change.
+        Beberapa perubahan memengaruhi sejumlah besar entri dalam kamus (misalnya, pembersihan semi-otomatis melalui
+        skrip, atau entri yang diimpor secara massal dari berkas eksternal). Untuk menghindari penumpukan riwayat
+        perubahan dengan ribuan item terkait, perubahan semacam itu muncul sebagai satu perubahan massal dalam riwayat.
+        Perubahan massal didefinisikan secara implisit melalui ID perubahan tiga digit sebelum tanda
+        <span class="inline-code">&gt;</span> yang mengawali komentar. Situs web ini memiliki halaman khusus untuk
+        setiap perubahan massal, yang menyediakan informasi tambahan serta berkas masukan dan skrip spesifik yang
+        terlibat. Perubahan biasa (bukan massal) tidak memiliki ID tiga digit sebelum tanda
+        <span class="inline-code">&gt;</span>.
     </li>
-    <li>
-      The entry’s status can be either New (<span class="inline-code">Stat-New</span>),
-      Approved (<span class="inline-code">Stat-Verif</span>) or
-      Flagged (<span class="inline-code">Stat-Flagged</span>).
-    </li>
-    <li>
-      Some changes affect a large number of entries in the dictionary (e.g., semi-automated cleanup through scripts,
-      or entries imported in bulk from an external file). To avoid cluttering the change history with thousands of
-      related items, such changes appear as a single bulk change in the history. Bulk changes are defined impicitly
-      through the three-digit change ID before the <span class="inline-code">&gt;</span> mark that introduces the comment.
-      The website has a dedicated page for every bulk change, providing additional information and the specific input
-      files and scripts that were involved. Regular, non-bulk changes do not have a three-digit ID before the
-      <span class="inline-code">&gt;</span> mark.
-    </li>
-  </ul>
-  <p>
-    <b>Original HanDeDict statuses</b>:
-    The majority of entries in the original HanDeDict file from 2011 is unverified, indicated by <i>(u.E.)</i>
-    within the entry text itself. Unverified entries appear as "New" here; the few verified entries received “Approved” status.
-  </p>
-  <h3>Conventions and guidelines</h3>
-  <p>
-    <b>Tone sandhi</b> is not indicated in headwords. Specifically, 一 <span class="pinyin">yī</span> and
-    不 <span class="pinyin">bù</span> always get first and fourth tone, even when they are pronounced differently
-    in a given context. Similarly, 3>2 tone sandhi is never indicated; the original third tone is retained in
-    你好 <span class="pinyin">nǐ hǎo</span>, for instance. This is standard practice in Chinese dictionaries.
-  </p>
-  <p>
-    Lexicalized changes to the neutral tone, however, are made explicit, so 明白 is
-    <span class="pinyin">míng bai</span>, not <span class="pinyin">míng bái</span>.
-  </p>
-  <p>
-    <b>Parentheses</b> always indicate meta-information: something that is not to be read literally as a German equivalent
-    of the Chinese headword.
-  </p>
-  <ul>
-    <li>
-      Text that is in parentheses is not retrieved by search. This is the most important thing to keep in mind as editors:
-      exclusion from search is the primary purpose of parentheses.
-    </li>
-    <li>
-      To indicate that parenthesized text is not to be read literally, it is rendered in italics.
-    </li>
-    <li>
-      Parentheses may occur at the start and end of a sense, but not in the middle.
-    </li>
-    <li>
-      In particular, avoid constructions like this: <span class="pinyin">Befragte(r), Interviewte(r)</span>.
-      It is impossible to correctly index and search text like this. There are still several such instances in the
-      dictionary, and it’s an editorial goal to eliminate them.
-    </li>
-    <li>
-      The inherited HanDeDict file indicates part-of-speech in parentheses, but neither the origin nor the exact meaning
-      of these labels is clear. (Do they refer to the headword or the German equivalent? Exactly what automated method was
-      used to generate them, and how reliable are they?) In spite of these doubts, the original part-of-speech labels are
-      preserved. However, it is absolutely not a requirement to keep them in entries that you edit, or to indicate
-      part-of-speech in newly added entries.
-    </li>
-    <li>
-      The inherited HanDeDict file uses a relatively large set of labels for domain and register, but no guidelines
-      or conventions survive to explain how they were applied. For the time being there is no editorial policy about labels.
-    </li>
-    <li>
-      When it is impossible to provide a German equivalent, put the entire paraphrase or explanation within parentheses.
-      This is particulary useful in the case of function words like 的, which have no equivalent “translation” in a
-      different language.
-    </li>
-  </ul>
-  <p>
-    <b>What is a word?</b> HanDeDict includes a lot of entries that are, strictly speaking, not words, such as Chengyu,
-    proper names, fixed expressions or simply frequent collocations. As a matter of principle, it doesn’t matter if
-    something is a “word” or not. If you feel that something stands on its own and would be useful for someone who is
-    trying to make sense of a Chinese text, it belongs in HanDeDict. You should avoid adding the following kinds of
-    entries, though:
-  </p>
-  <ul>
-    <li>
-      Expressions whose meaning is completely transparent from their parts. No trivial phrases or sentences.
-    </li>
-    <li>
-      Trivially modified words. 蓝色 <span class="pinyin">lán sè</span> refers to the color blue; no need to include
-      蓝色的 <span class="pinyin">lán sè de</span> as if that were an adjective in its own right.
-    </li>
-  </ul>
-  <p>
-    <b>Pinyin words</b>. In HanDeDict, Pinyin is used exclusively for the purpose of providing a syllable-by-syllable
-    phonetic transcription of the headword. The rules of Pinyin ortography for word boundaries are not observed.
-    The main reason for this is that the inherited HanDeDict file does not contain this information. Because the
-    dictionary contains a mixture of words and multi-word expressions, it would be an immense manual effort to add
-    true word segmentation, and the practical benefit for the dictionary’s users would be limited.
-  </p>
-  <p>
-    <b>Ortographic and phonetic variants</b>. Some headwords can be written with alternative characters (typically,
-    alternative traditional characters). Similarly, many headwords have alternative pronunciations (most frequently,
-    with a different tone, often reflecting regional variation). HanDeDict’s current format cannot encode this
-    information elegantly; the only possibility is to create separate headwords. This may be addressed through an
-    extension of the format in the future.
-  </p>
-  <p>
-    <b>German ortography</b>. New German ortography, as used in Germany, is preferred. It is not mandatory, however;
-    the website’s search function compensates for the most significant differences to make sure all relevant words
-    are found regardless of ortography.
-  </p>
-  <p>
-    <b>Meanings and alternatives</b>. HanDeDict doesn’t impose any strict guidelines about separating distinct meanings
-    of a headword. Often, alternative translations for a single meaning are listed within a single sense, separated by
-    commas or semicolons. In other entries, alternative translations for the same meaning appear as separate senses.
-    Both approaches are acceptable. Very often, it would be difficult to decide if something’s a synonym for the same
-    meaning, or a different meaning altogether.
-  </p>
-  <p>
-    When editing an entry, keep in mind the person using the dictionary, and try to find a form that makes it easy for
-    the user to grasp the word’s meanings, register and usage.
-  </p>
+
+    <p>
+        <b>Status asli HanDeDict</b>: Sebagian besar entri dalam berkas asli HanDeDict dari tahun 2011 belum
+        diverifikasi, yang ditandai dengan <i>(u.E.)</i>
+        di dalam teks entri itu sendiri. Entri yang belum diverifikasi muncul sebagai "Baru" di sini; sedangkan sejumlah
+        kecil entri yang telah diverifikasi mendapatkan status "Disetujui".
+    </p>
+
+    <h3>Konvensi dan pedoman</h3>
+    <p>
+        <b>Perubahan nada (*tone sandhi*)</b> tidak dicantumkan pada kata entri. Secara khusus, 一
+        <span class="pinyin">yī</span> dan 不 <span class="pinyin">bù</span> selalu ditulis dengan nada pertama dan
+        keempat, meskipun pelafalannya berubah dalam konteks tertentu. Demikian pula, perubahan nada 3>2 tidak pernah
+        dicantumkan; nada ketiga asli tetap dipertahankan, misalnya pada <span class="pinyin">nǐ hǎo</span> (你好). Ini
+        adalah praktik standar dalam kamus bahasa Mandarin.
+    </p>
+    <p>
+        Namun, perubahan leksikal menjadi nada netral dicantumkan secara eksplisit; contohnya, 明白 ditulis sebagai
+        <span class="pinyin">míng bai</span>, bukan <span class="pinyin">míng bái</span>.
+    </p>
+    <p>
+        <b>Tanda kurung</b> selalu menunjukkan informasi meta: sesuatu yang tidak dimaksudkan untuk dibaca secara
+        harfiah sebagai padanan bahasa Jerman dari kata entri bahasa Mandarin tersebut.
+    </p>
+    <ul>
+        <li>
+            Teks di dalam tanda kurung tidak akan muncul dalam hasil pencarian. Ini adalah hal terpenting yang perlu
+            diingat oleh editor: pengecualian dari pencarian adalah tujuan utama penggunaan tanda kurung.
+        </li>
+        <li>
+            Untuk menunjukkan bahwa teks dalam tanda kurung tidak dimaksudkan untuk dibaca secara harfiah, teks tersebut
+            ditulis dengan huruf miring.
+        </li>
+        <li>Tanda kurung dapat muncul di awal dan akhir definisi makna, tetapi tidak di tengah-tengahnya.</li>
+        <li>
+            Secara khusus, hindari konstruksi seperti ini: <span class="pinyin">Befragte(r), Interviewte(r)</span>. Teks
+            semacam ini tidak dapat diindeks dan dicari dengan benar. Masih terdapat beberapa contoh seperti ini dalam
+            kamus, dan menghilangkan hal tersebut merupakan salah satu tujuan penyuntingan.
+        </li>
+        <li>
+            Berkas HanDeDict warisan mencantumkan kelas kata di dalam tanda kurung, namun asal-usul maupun makna pasti
+            dari label-label tersebut tidak jelas.
+        </li>
+        (Apakah label tersebut merujuk pada kata utama atau padanannya dalam bahasa Jerman? Metode otomatis apa tepatnya
+        yang digunakan untuk menghasilkannya, dan seberapa andalkah metode tersebut?) Terlepas dari keraguan ini, label
+        kelas kata yang asli tetap dipertahankan. Namun, Anda sama sekali tidak diwajibkan untuk mencantumkannya pada
+        entri yang Anda sunting, ataupun mencantumkan kelas kata pada entri yang baru ditambahkan.
+
+        <li>
+            Berkas HanDeDict warisan ini menggunakan rangkaian label yang cukup banyak untuk ranah (domain) dan ragam
+            bahasa (register), namun tidak ada pedoman atau konvensi yang tersisa untuk menjelaskan bagaimana
+            label-label tersebut diterapkan. Untuk saat ini, belum ada kebijakan redaksional mengenai penggunaan label.
+        </li>
+        <li>
+            Jika padanan dalam bahasa Jerman tidak dapat diberikan, tempatkan seluruh parafrasa atau penjelasannya di
+            dalam tanda kurung. Hal ini sangat berguna untuk kata tugas (function words) seperti 的, yang tidak memiliki
+            padanan "terjemahan" dalam bahasa lain.
+        </li>
+    </ul>
+    <p>
+        <b>Apa itu kata?</b> HanDeDict memuat banyak entri yang, secara ketat, bukanlah sebuah kata, seperti *Chengyu*,
+        nama diri, ungkapan tetap, atau sekadar kolokasi yang sering muncul. Pada prinsipnya, tidak masalah apakah
+        sesuatu itu merupakan "kata" atau bukan. Jika Anda merasa bahwa suatu entri dapat berdiri sendiri dan bermanfaat
+        bagi seseorang yang sedang berusaha memahami teks bahasa Mandarin, maka entri tersebut layak masuk dalam
+        HanDeDict. Namun, Anda sebaiknya menghindari penambahan jenis entri berikut:
+    </p>
+    <ul>
+        <li>
+            Ungkapan yang maknanya dapat dipahami sepenuhnya dari unsur-unsur pembentuknya. Jangan memasukkan frasa atau
+            kalimat yang maknanya sudah jelas dengan sendirinya.
+        </li>
+        <li>
+            Kata yang dimodifikasi secara sederhana. 蓝色 <span class="pinyin">lán sè</span> merujuk pada warna biru;
+            tidak perlu mencantumkan 蓝色的 <span class="pinyin">lán sè de</span> seolah-olah itu adalah kata sifat yang
+            berdiri sendiri.
+        </li>
+    </ul>
+    <p>
+        <b>Kata-kata Pinyin</b>. Dalam HanDeDict, Pinyin digunakan secara eksklusif untuk menyajikan transkripsi fonetis
+        kata entri berdasarkan suku kata demi suku kata. Aturan ortografi Pinyin mengenai batas antar-kata tidak
+        diterapkan. Alasan utamanya adalah karena berkas HanDeDict yang ada saat ini tidak memuat informasi tersebut.
+        Mengingat kamus ini berisi campuran antara kata tunggal dan ungkapan yang terdiri dari beberapa kata, penambahan
+        segmentasi kata yang akurat akan memerlukan upaya manual yang sangat besar, sementara manfaat praktisnya bagi
+        pengguna kamus tergolong terbatas.
+    </p>
+    <p>
+        <b>Varian ortografis dan fonetis</b>. Beberapa kata entri dapat ditulis menggunakan karakter alternatif
+        (biasanya berupa karakter tradisional alternatif). Demikian pula, banyak kata entri memiliki pelafalan
+        alternatif (paling sering berupa perbedaan nada, yang kerap mencerminkan variasi regional). Format HanDeDict
+        saat ini tidak dapat menyajikan informasi tersebut secara elegan; satu-satunya cara adalah dengan membuat entri
+        terpisah untuk masing-masing varian. Hal ini mungkin dapat diatasi melalui pengembangan format di masa
+        mendatang.
+    </p>
+    <p>
+        <b>Ejaan bahasa Jerman</b>. Ejaan bahasa Jerman yang baru, sebagaimana digunakan di Jerman, lebih diutamakan.
+        Namun, hal ini tidak bersifat wajib; fitur pencarian situs web ini dapat mengatasi perbedaan-perbedaan utama
+        untuk memastikan semua kata yang relevan tetap ditemukan, terlepas dari variasi ejaannya.
+    </p>
+    <p>
+        <b>Makna dan alternatif</b>. HanDeDict tidak menerapkan pedoman ketat mengenai pemisahan makna yang berbeda dari
+        sebuah kata entri. Sering kali, terjemahan alternatif untuk satu makna dicantumkan dalam satu kategori makna
+        yang sama, dipisahkan oleh tanda koma atau titik koma. Pada entri lain, terjemahan alternatif untuk makna yang
+        sama muncul sebagai kategori makna yang terpisah. Kedua pendekatan tersebut dapat diterima. Sering kali, sulit
+        untuk menentukan apakah suatu kata merupakan sinonim untuk makna yang sama atau justru merujuk pada makna yang
+        sama sekali berbeda.
+    </p>
+    <p>
+        Saat menyunting entri, pertimbangkanlah pengguna kamus tersebut, dan upayakan untuk menemukan bentuk penyajian
+        yang memudahkan pengguna dalam memahami makna, ragam bahasa (register), serta penggunaan kata tersebut.
+    </p>
 </div>
