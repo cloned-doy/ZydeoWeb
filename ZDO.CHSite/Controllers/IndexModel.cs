@@ -46,7 +46,7 @@ namespace ZDO.CHSite.Controllers
         /// <summary>
         /// Ctor: init immutable instance.
         /// </summary>
-        public IndexModel(Mutation mut, string baseUrl, string lang, string rel, 
+        public IndexModel(Mutation mut, string baseUrl, string lang, string rel,
             PageResult pr, string gaCode, string verStr, string captchaSiteKey)
         {
             Mut = mut;
@@ -130,10 +130,10 @@ namespace ZDO.CHSite.Controllers
             get
             {
                 string res = "©";
-                if (DateTime.UtcNow.Year == 2017) res += "2017";
-                else res += "2017-" + DateTime.UtcNow.Year.ToString();
-                if (Lang == "hu") res += " Ugray Gábor";
-                else res += " Gábor L Ugray";
+                if (DateTime.UtcNow.Year == 2026) res += "2026";
+                else res += "2026-" + DateTime.UtcNow.Year.ToString();
+                if (Lang == "id") res += " Cloned Doy";
+                else res += " Cloned Doy";
                 return res;
             }
         }

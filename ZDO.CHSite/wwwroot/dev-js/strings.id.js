@@ -32,10 +32,10 @@
   },
   "options": {
     "title": "Pengaturan pencarian",
-    "script": "Script",
+    "script": "Huruf",
     "simplified": "Sederhana",
     "traditional": "Tradisional",
-    "bothscripts": "Ganda",
+    "bothscripts": "Semua",
     "tonecolors": "Warna nada",
     "nocolors": "Nihil",
     "pleco": "Pleco",
