@@ -576,7 +576,7 @@ namespace ZD.AlignTool
             List<string> simps = new List<string>();
             HashSet<string> simpSet = new HashSet<string>();
             readDict("cedict_ts.u8", simpToCE, simps, simpSet);
-            readDict("chdict.u8", simpToCH, simps, simpSet);
+            readDict("cidict.u8", simpToCH, simps, simpSet);
 
             // Prune HU vectors - for speed
             List<string> huToRem = new List<string>();
@@ -1034,7 +1034,7 @@ namespace ZD.AlignTool
             List<string> simps = new List<string>();
             HashSet<string> simpSet = new HashSet<string>();
             readDict("cedict_ts.u8", simpToCE, simps, simpSet);
-            readDict("chdict.u8", simpToCH, simps, simpSet);
+            readDict("cidict.u8", simpToCH, simps, simpSet);
 
             List<string> llInDict = new List<string>();
             List<string> llInCH = new List<string>();

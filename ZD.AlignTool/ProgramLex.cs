@@ -21,7 +21,7 @@ namespace ZD.AlignTool
             string line;
             using (var srSubtlex = ropen("subtlex-ch.txt"))
             using (var srCe = ropen("cedict_ts.u8"))
-            using (var srCh = ropen("chdict.u8"))
+            using (var srCh = ropen("cidict.u8"))
             using (var srLL = ropen("15-colloc-ll-filtered.txt"))
             using (var srMI = ropen("15-colloc-mi-filtered.txt"))
             using (var srWV = ropen("11-jiestem-dict-wvsims-filtered.txt"))
@@ -114,7 +114,7 @@ namespace ZD.AlignTool
             List<string> simps = new List<string>();
 
             using (var srCe = ropen("cedict_ts.u8"))
-            using (var srCh = ropen("../../Zydeo-DictTrans/_work_chdict_corpus/chdict.u8"))
+            using (var srCh = ropen("../../Zydeo-DictTrans/_work_chdict_corpus/cidict.u8"))
             using (var srBase = ropen("31-lex-scope-base.txt"))
             {
                 while ((line = srCe.ReadLine()) != null)

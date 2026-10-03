@@ -31,7 +31,7 @@ namespace ZD.Tool
             Console.WriteLine("  Outputs chardata.js");
             Console.WriteLine("--ch-prepare");
             Console.WriteLine("  Converts raw CHDICT file into enriched format.");
-            Console.WriteLine("  Input name fixed: chdict.u8");
+            Console.WriteLine("  Input name fixed: cidict.u8");
             Console.WriteLine("--moedict-heads");
             Console.WriteLine("  Extracts and fixes headwords from MOEDICT SQLite export.");
             Console.WriteLine("  Input name fixed: moedict-entries.txt");
@@ -41,7 +41,7 @@ namespace ZD.Tool
             Console.WriteLine("--ch-examine");
         Console.WriteLine("--cidict-diag");
             Console.WriteLine("  Parses CHDICT file, logs anomalies and stats.");
-            Console.WriteLine("  Input name fixed: chdict.u8");
+            Console.WriteLine("  Input name fixed: cidict.u8");
             Console.WriteLine();
         }
 

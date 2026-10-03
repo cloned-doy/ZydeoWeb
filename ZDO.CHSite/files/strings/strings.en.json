@@ -24,8 +24,8 @@
     "subMyProfile": "My profile"
   },
   "misc": {
-    "searchResultTitleHDD": "{0} - German translation - HanDeDict @ Zydeo Chinese-German Dictionary",
-    "searchResultTitleTrgHDD": "{0} - Chinese translation - HanDeDict @ Zydeo Chinese-German Dictionary",
+    "searchResultTitleHDD": "{0} - Indonesian translation - CIDICT @ Chinese-Indonesian dictionary",
+    "searchResultTitleTrgHDD": "{0} - Chinese translation - CIDICT @ Chinese-Indonesian dictionary",
     "searchResultTitleCHD": "{0} - Hungarian translation - CHDICT Chinese ⇔ Hungarian Dictionary",
     "searchResultTitleTrgCHD": "{0} - Chinese translation - CHDICT Chinese ⇔ Hungarian Dictionary",
     "corpusResultTitleCHD": "{0} - Sentence translations - CHDICT Chinese ⇔ Hungarian Corpus",

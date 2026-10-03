@@ -29,7 +29,7 @@ namespace ZD.Tool
         public void Work()
         {
             string line;
-            using (var fsDict = new FileStream("chdict.u8", FileMode.Open, FileAccess.Read))
+            using (var fsDict = new FileStream("cidict.u8", FileMode.Open, FileAccess.Read))
             using (var srDict = new StreamReader(fsDict))
             using (var fsDiag = new FileStream("chd-diag.txt", FileMode.Create, FileAccess.ReadWrite))
             using (var swDiag = new StreamWriter(fsDiag))

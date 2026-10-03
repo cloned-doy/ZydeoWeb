@@ -1,7 +1,7 @@
 ﻿var uiStringsEn = {
   "empty-str": "",
   "oops": {
-    "title-hdd": "Error - HanDeDict @ Zydeo Chinese-German Dictionary",
+    "title-hdd": "Error - CIDICT @ Chinese-Indonesian dictionary",
     "title-chd": "Error - CHDICT Chinese-Hungarian Dictionary",
     "caption": "Something went wrong",
     "message1": "This can be the Internet's fault, or simply a bug in the dictionary. Please try reloading the page in a few seconds.",

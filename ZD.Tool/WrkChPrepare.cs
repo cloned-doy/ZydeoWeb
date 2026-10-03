@@ -26,7 +26,7 @@ namespace ZD.Tool
             StringBuilder sb = new StringBuilder();
             HashSet<char> simpChars = new HashSet<char>();
 
-            using (FileStream fsIn = new FileStream("chdict.u8", FileMode.Open, FileAccess.Read))
+            using (FileStream fsIn = new FileStream("cidict.u8", FileMode.Open, FileAccess.Read))
             using (StreamReader sr = new StreamReader(fsIn))
             {
                 string line;
