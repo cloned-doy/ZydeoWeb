@@ -43,9 +43,9 @@
     "annotationAddNow": "I'll add the word now"
   },
   "emails": {
-    "senderNameHDD": "HanDeDict @ Zydeo website",
+    "senderNameHDD": "CIDICT @ Chinese-Indonesian dictionary",
     "senderNameCHD": "CHDICT website",
-    "regConfirm": "Complete your registration",
+    "regConfirm": "Welcome! Complete your registration",
     "mailChangeConfirm": "Confirm new email",
     "passreset": "Reset your password"
   },

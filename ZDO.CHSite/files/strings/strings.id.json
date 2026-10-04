@@ -29,60 +29,60 @@
     "searchResultTitleCHD": "{0} - Hungarian translation - CHDICT Chinese ⇔ Hungarian Dictionary",
     "searchResultTitleTrgCHD": "{0} - Chinese translation - CHDICT Chinese ⇔ Hungarian Dictionary",
     "corpusResultTitleCHD": "{0} - Sentence translations - CHDICT Chinese ⇔ Hungarian Corpus",
-    "cookieNotice": "This website relies on cookies for some of its functionality. By using the site, you agree to its use of cookies.",
+    "cookieNotice": "Laman ini menggunakan kukis guna kenyamanan penggunaan di fitur-fitur tersedia. Dengan menggunakan laman ini, Anda dianggap setuju dengan penggunaan kukis.",
     "cookieOK": "OK",
-    "cookieLearnMore": "Learn more",
+    "cookieLearnMore": "Pelajari selengkapnya",
     "imprint": "Imprint"
   },
   "search": {
     "searchModeDict": "Kamus",
     "searchModeCorp": "Corpus",
     "corpusLoadMore": "Muat lainnya",
-    "corpusResultCount": "{0} results",
-    "annotationNotice": "The search expression is not a word in the dictionary; showing annotations instead.",
-    "annotationAddNow": "I'll add the word now"
+    "corpusResultCount": "{0} hasil",
+    "annotationNotice": "Kata kunci pencarian tidak terdapat di kamus; menampilkan makna.",
+    "annotationAddNow": "Kata akan ditambahkan"
   },
   "emails": {
-    "senderNameHDD": "HanDeDict @ Zydeo website",
+    "senderNameHDD": "CIDICT @ Kamus Mandarin Indonesia",
     "senderNameCHD": "CHDICT website",
-    "regConfirm": "Complete your registration",
-    "mailChangeConfirm": "Confirm new email",
-    "passreset": "Reset your password"
+    "regConfirm": "Selamat bergabung! Konfirmasi pendaftaran Anda",
+    "mailChangeConfirm": "Konfirmasi email baru",
+    "passreset": "Atur ulang kata sandi"
   },
   "history": {
-    "lblPage": "Page",
-    "changeNewEntry": "New entry",
-    "changeEdited": "Edited",
-    "changeCommented": "Commented",
+    "lblPage": "Halaman",
+    "changeNewEntry": "Entri baru",
+    "changeEdited": "Tersunting",
+    "changeCommented": "Komentar",
     "changeBulkImport": "Bulk import",
-    "changeApproved": "Approved",
-    "changeFlagged": "Flagged",
-    "changeStatusNeutral": "Unflagged",
-    "bulkLink": "Link",
-    "bulkNewWords": "{0} new words",
-    "bulkChangedWords": "{0} words changed"
+    "changeApproved": "Disetuji",
+    "changeFlagged": "Ditandai",
+    "changeStatusNeutral": "Tanda dihapus",
+    "bulkLink": "Tautan",
+    "bulkNewWords": "{0} kata baru",
+    "bulkChangedWords": "{0} kata tersunting"
   },
   "userList": {
-    "registered": "Registered:",
-    "location": "Location:",
-    "about": "About:"
+    "registered": "Bergabung:",
+    "location": "Lokasi:",
+    "about": "Tentang:"
   },
   "newEntry": {
-    "errSpacePunct": "The headword must not contain spaces or punctuation",
-    "errNotHanzi": "Not a Hanzi, capital letter or digit:",
-    "errUnsupported": "Unsupported character:",
-    "errNotSimp": "Not simplified Hanzi:"
+    "errSpacePunct": "Kata depan tidak boleh mengandung spasi atau tanda baca",
+    "errNotHanzi": "Bukan Hanzi, huruf kapital atau angka:",
+    "errUnsupported": "Karakter tidak diduking:",
+    "errNotSimp": "Bukan Hanzi Sederhana:"
   },
   "editEntry": {
-    "badDataOnSave": "Your change cannot be saved: the entry is invalid. (Is the headword correct?)",
-    "duplicateOnSave": "Your change cannot be saved: an entry with this headword already exists in the dictionary.",
-    "hwProblemNotSimplified": "{0} does not appear to be a simplified character.",
-    "hwProblemNotTraditional": "{0} does not appear to be a traditional character.",
-    "hwProblemSimpTradCounts": "Different number of simplified and traditional characters.",
-    "hwProblemNotTradForSimp": "{0} is not a known traditional variant of {1}.",
-    "hwProblemWrongPinyin": "{0} is not a known reading of {1}.",
-    "hwProblemInvalidPinyin": "Incorrect or invalid Pinyin syllables.",
-    "hwProblemExtraSpacesPinyin": "Extra spaces in Pinyin."
+    "badDataOnSave": "Suntingan Anda tidak bisa tersimpan: entri tidak valid. (Kata depan apa sudah benar?)",
+    "duplicateOnSave": "Suntingan Anda tidak bisa tersimpan: entri dengan kata ini sudah ada di kamus.",
+    "hwProblemNotSimplified": "{0} sepertinya bukan huruf Hanzi Sederhana.",
+    "hwProblemNotTraditional": "{0} sepertinya bukan huruf Hanzi Tradisional.",
+    "hwProblemSimpTradCounts": "Jumlah antara karakter Hanzi Sederhana dan Tradisional tidak sama.",
+    "hwProblemNotTradForSimp": "{0} bukan varian dari {1}.",
+    "hwProblemWrongPinyin": "{0} bukan Pinyin dari {1}.",
+    "hwProblemInvalidPinyin": "Huruf Pinyin salah atau tidak valid.",
+    "hwProblemExtraSpacesPinyin": "Spasi berlebih di Pinyin."
   },
   "displayEntry": {
     "classifier": "Classifier"
