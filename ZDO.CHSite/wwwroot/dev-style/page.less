@@ -6,7 +6,7 @@ html { height: 100%; font-size: 12pt; }
 
 body {
   position: relative; width: 100%; height: 100%; overflow-y: scroll; margin: 0; padding: 0;
-  font-family: @fntBase; 
+  font-family: @fntBase;
   color: @clrBodyText; background-color: @clrDefBg; visibility: hidden;
 }
 
@@ -60,15 +60,47 @@ body {
   z-index: 11; background-color: @clrLight; display: none;
   // Top half of header
   #hdrBurgerTop {
-    height: 50%; width: 100%; box-sizing: border-box; position: relative; float: left;
-    font-family: @fntSerif; font-size: 2rem; color:@clrStrongAccent; cursor: default;
-    i, span { position: relative; float: left; display: inline-block; }
+    height: 50%;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    font-family: @fntSerif;
+    font-size: 2rem;
+    color:@clrStrongAccent;
+    cursor: default;
+
+    // burger stays at the left
     i {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
       z-index: 12;
-      margin: 0 1rem 0 0; padding: 0 0.5rem 0.1rem 0.5rem; color: @clrStrong; font-size: 2.5rem; cursor: pointer;
+      margin: 0 1rem 0 0;
+      padding: 0 0.5rem 0.1rem 0.5rem;
+      color: @clrStrong;
+      font-size: 2.5rem;
+      cursor: pointer;
       border: 1pt solid @clrLight;
     }
-    span b { font-family: @fntZho; font-weight: normal; }
+
+    // tile is centered to screen/container
+    span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    span b {
+        font-family: @fntZho;
+        font-weight: normal;
+    }
   }
   // Bottom half of header, when in search mode
   .hdrSearch {
@@ -135,7 +167,7 @@ body {
     }
     #hdrHamLangs { padding-left: 0.2rem; }
     .langSel {
-      width: auto; 
+      width: auto;
       padding: 0 0.3rem 0 0.3rem; margin: 0.4rem 0.5rem 0 0; border-radius: 0.1rem;
       font-family: @fntBase; font-weight: bold; font-size: 1.3rem;
       &:hover, &.on { color: @clrDefBg; background-color: @clrMedium; }
@@ -196,7 +228,7 @@ body {
     top: 3.8rem; cursor: default; background-color: @clrDefBg;
     .searchModeBox {
       box-sizing: border-box; width: auto; height: 2rem; border: 1pt solid @clrLightLight;
-      .searchMode { 
+      .searchMode {
         width: auto; height: 100%; padding: 0.3rem 1rem; font-size: 1rem; box-sizing: border-box;
         text-transform: uppercase; color: @clrStrong; background-color: @clrDefBg;
         display: block; text-decoration: none; position: relative; float: left; cursor: default;
@@ -247,7 +279,7 @@ body {
   #hdrMenuRight {
     position: absolute; width: 9rem; left: 35.2rem;
     .langSel {
-      display: inline-block; position: relative; float: right; 
+      display: inline-block; position: relative; float: right;
       padding: 0 0.3rem 0 0.3rem; margin: 0.6rem 0.2rem 0 0; border-radius: 0.1rem;
       color: @clrMedium; text-decoration: none; cursor: default;
       font-family: @fntBase; font-weight: bold; font-size: 50%;
@@ -272,7 +304,7 @@ body {
   &.visible { display: block; }
   span {
     margin-right: 1.5rem;
-    a, span { 
+    a, span {
       border-bottom: 0.3rem solid @clrDefBg; padding-bottom: 0.3rem;
       color: @clrStrong; text-decoration: none;
       transition: border 0.5s ease;
@@ -382,8 +414,8 @@ textarea, input { outline: none; border: none; background-color: @clrLightLight;
   h3 { font-family: @fntSansAlt; font-size: 1.3rem; margin: 1.5rem 0 0.5rem 0; }
   a { text-decoration: none; color: @clrStrongAccent; }
   a:hover { color: @clrStrongRed; }
-  .inline-code { 
-    font-family: monospace; font-size: 1rem; background-color: @clrLightLightGray; border-radius: 0.1rem; 
+  .inline-code {
+    font-family: monospace; font-size: 1rem; background-color: @clrLightLightGray; border-radius: 0.1rem;
     padding: 0.05rem 0.2rem; display: inline-block;
   }
   .pre-wrap { overflow-x: scroll; background-color: @clrLightLightGray; margin-bottom: 0.7rem; }
@@ -394,9 +426,9 @@ textarea, input { outline: none; border: none; background-color: @clrLightLight;
   .pinyin { color: #606060; background-color: @clrLightLightGray; padding: 0 0.2rem; border-radius: 0.1rem; }
   &.faq h3, .faq-expand-all { cursor: pointer; color: @clrStrongRed; }
   div.faq-section { display: none; &.visible { display: block; } }
-  img { 
+  img {
     display: block; margin: 0 auto; max-width: 100%; height: auto; padding: 5px; box-sizing: border-box;
-    //border: 2px solid lighten(@clrBodyText, 65%); 
+    //border: 2px solid lighten(@clrBodyText, 65%);
   }
   span.hlHi { background-color: darken(@clrLightAccent, 6%); }
 }
@@ -492,6 +524,8 @@ textarea, input { outline: none; border: none; background-color: @clrLightLight;
 }
 
 @media only screen and (max-width: 725px) {
+
+  body.hdd,
   body.chd {
     #dynPage {
       margin: 0; width: 100%; padding: 8.5rem 1rem 0 1rem;
@@ -512,4 +546,3 @@ textarea, input { outline: none; border: none; background-color: @clrLightLight;
     }
   }
 }
-
