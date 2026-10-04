@@ -103,6 +103,14 @@
       </div>
     </div>
     <div class="hdrTitle hdrAlt"></div>
+    // we might add user login icon and button below here.
+    // hmm..
+    // wait, i think the reason why the original author
+    // didnt implement mobile login feature
+    // is because mobile is for read only.
+    // add or edit feature is dedicated on desktop or
+    // wide screen.
+    // okay. cool.
     <div id="hdrHamMenu">
       <a class="ajax" href="/@Model.Lang">@Model.Str("header.topSearch")</a>
       <a class="ajax" href="/@Model.Lang/edit/history">@Model.Str("header.subEditHistory")</a>
@@ -116,7 +124,6 @@
       <div id="hdrHamLangs">
         <a class="langSel langSelId on" href="/id/@Model.Rel">ID</a>
         <a class="langSel langSelEn" href="/en/@Model.Rel">EN</a>
-        <a class="loginIcon ajax" href="/@Model.Lang/user/users"><i class="fa fa-user"></i></a>
       </div>
 
     </div>
